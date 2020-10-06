@@ -1,0 +1,45 @@
+﻿ [
+    {
+      "Municipality": "Vilnius",
+	  "Year":1,
+      "TaxAmount": 0.7
+    },
+    {
+      "Municipality": "Vilnius",
+	  "Month": 8,
+	  "Day":28,
+      "TaxAmount": 0.77
+    },
+    {
+      "Municipality": "Kaunas",
+	  "Year":1,
+      "TaxAmount": 0.3
+    },
+    {
+      "Municipality": "Kaunas",
+      "Week":10,
+      "TaxAmount": 0.97
+    },
+    {
+      "Municipality": "Vilnius",
+      "Week":53,
+      "TaxAmount": 0.11
+    },
+    {
+      "Municipality": "Vilnius",
+      "Month":7,
+	  "Day":7,
+      "TaxAmount": 0.95
+    },
+    {
+      "Municipality": "Kaunas",
+      "Month":5,
+	  "Day":5,
+      "TaxAmount": 0.37
+    },
+    {
+      "Municipality": "Kaunas",
+      "Week":23,
+      "TaxAmount": 0.05
+    }
+  ]

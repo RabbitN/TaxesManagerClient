@@ -22,18 +22,25 @@ namespace Application
             Console.WriteLine("COMMAND: Get all taxes");
             RestRequest request = new RestRequest("", Method.GET);
             IRestResponse<List<Tax>> response = _client.Execute<List<Tax>>(request);
-            var taxes = JsonConvert.DeserializeObject<List<Tax>>(response.Content);
-            if (taxes.Count != 0)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                for (int i = 0; i < taxes.Count; i++)
+                var taxes = JsonConvert.DeserializeObject<List<Tax>>(response.Content);
+                if (taxes.Count != 0)
                 {
-                    Console.WriteLine("{0}, {1}, {2}, {3}",
-                        taxes[i].Municipality, taxes[i].StartDate.ToString("yyyy-MM-dd"), taxes[i].EndDate.ToString("yyyy-MM-dd"), taxes[i].TaxAmount);
+                    for (int i = 0; i < taxes.Count; i++)
+                    {
+                        Console.WriteLine("{0}, {1}, {2}, {3}",
+                            taxes[i].Municipality, taxes[i].StartDate.ToString("yyyy-MM-dd"), taxes[i].EndDate.ToString("yyyy-MM-dd"), taxes[i].TaxAmount);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No taxes found");
                 }
             }
             else
             {
-                Console.WriteLine("No taxes found");
+                Console.WriteLine(response.Content);
             }
             Console.WriteLine();
         }
